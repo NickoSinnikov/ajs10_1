@@ -1,6 +1,6 @@
-import GameSaveLoader from "../app";
+import GameSaveLoader from "../GameSavingLoader";
 test("show load data", () => {
-  const equalData = JSON.stringify({
+  const equalData = {
     id: 9,
     created: 1546300800,
     userInfo: {
@@ -9,7 +9,7 @@ test("show load data", () => {
       level: 10,
       points: 2000,
     },
-  });
+  };
 
   GameSaveLoader.load().then((saving) => {
     expect(saving).toEqual(equalData);
